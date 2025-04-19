@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Or choose a font closer to Figma */
+    background-color: #1a1a1a;
+    /* Dark background */
+    color: #f0f0f0;
+    /* Light text */
+    line-height: 1.6;
+}
+
+/* Define colors for easy changes */
+:root {
+    --primary-dark: #1a1a1a;
+    --accent-gold: #DAA520;
+    /* GoldenRod - adjust as needed */
+    --text-light: #f0f0f0;
+    --text-dark: #333;
+    --card-bg: #2a2a2a;
+    /* Slightly lighter dark for cards/buttons */
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--accent-gold);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    /* Ensure images don't overflow */
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--primary-dark);
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    /* Adjust logo size */
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 25px;
+}
+
+.navbar ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    /* Add 'active' class in HTML for current page */
+    color: var(--accent-gold);
+}
+
+/* Main Content Area */
+main {
+    padding: 40px 0;
+}
+
+/* Hero Section (Homepage) */
+.hero {
+    text-align: center;
+    padding: 60px 0;
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #ccc;
+    /* Slightly dimmer text for subheading */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-gold);
+    color: var(--text-dark);
+    /* Dark text on gold button */
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    /* Rounded button */
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #c8941a;
+    /* Darker gold on hover */
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+/* Placeholder for Hero Graphic (Optional) */
+.hero-graphic {
+    margin-top: 40px;
+    /* You could add a background image or an <img> here if desired */
+    /* Example: */
+    /* background: url('../assets/images/hero-graphic.png') no-repeat center center/cover; */
+    /* height: 200px; */
+    /* width: 200px; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+}
+
+
+/* Issue Selection Page */
+.issue-selection-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.issue-selection-header h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.issue-selection-header p {
+    font-size: 1.1em;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.issue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Responsive grid */
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.issue-card {
+    background-color: var(--card-bg);
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 30px 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    /* Use flexbox for alignment within card */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+    /* Ensure cards have some height */
+}
+
+.issue-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(218, 165, 32, 0.2);
+    /* Gold shadow on hover */
+}
+
+.issue-card h2 {
+    color: var(--accent-gold);
+    margin: 0;
+    /* Remove default margin */
+    font-size: 1.4em;
+}
+
+/* Issue Detail Page */
+.issue-detail h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--accent-gold);
+}
+
+.issue-detail h2 {
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #eee;
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+}
+
+.issue-detail p,
+.issue-detail ul {
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.issue-detail ul {
+    margin-left: 20px;
+    /* Indent lists */
+}
+
+.download-link,
+.external-link {
+    display: inline-block;
+    background-color: var(--accent-gold);
+    color: var(--text-dark);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.download-link:hover,
+.external-link:hover {
+    background-color: #c8941a;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    /* Slightly darker footer */
+    color: #aaa;
+    padding: 30px 0;
+    margin-top: 60px;
+    /* Space above footer */
+    border-top: 1px solid #333;
+    font-size: 0.9em;
+}
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens */
+    justify-content: space-between;
+    align-items: center;
+    /* Align items vertically */
+}
+
+.footer-logo img {
+    height: 30px;
+    /* Smaller logo in footer */
+    margin-bottom: 10px;
+    /* Space below logo on wrap */
+}
+
+.footer-links ul,
+.footer-contact ul {
+    list-style: none;
+}
+
+.footer-links li,
+.footer-contact li {
+    margin-bottom: 8px;
+}
+
+.footer-links a,
+.footer-contact a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: var(--accent-gold);
+    text-decoration: underline;
+}
+
+.footer-contact p {
+    margin-bottom: 8px;
+}
+
+.footer-disclaimer {
+    width: 100%;
+    /* Take full width */
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    color: #888;
+    /* Muted color for disclaimer */
+    font-size: 0.8em;
+}
+
+/* Basic Responsiveness */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        /* Stack nav links */
+        align-items: center;
+        /* Center stacked links */
+        width: 100%;
+        display: none;
+        /* Hide for now - requires JS for toggle */
+        /* TODO: Add JS later for a hamburger menu */
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 2.2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logo,
+    .footer-links,
+    .footer-contact {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
